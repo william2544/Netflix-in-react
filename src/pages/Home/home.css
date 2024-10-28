@@ -1,0 +1,57 @@
+.hero{
+    position: relative;
+}
+.bannner_img{
+    width: 100%;
+    mask-image: linear-gradient(to right,transparent,black 75%);
+    -weblit-mask-image: linear-gradient(to right,transparent,black 75%);
+}
+.hero-caption{
+    position: absolute;
+    bottom: 0;
+    padding-left: 6px;
+}
+.caption-img{
+    width: 90%;
+    max-width: 420px;
+    margin-bottom: 30px;
+}
+.hero-caption p{
+    max-width: 700px;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+.hero_btns{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.hero_btns .btn{
+    display: inline-flex;
+    margin: 0;
+    outline: 0;
+    padding: 4px 8px;
+    background: #fff;
+    gap: 10px;
+    font-weight: 600;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+    border-style: none;
+}
+.hero_btns .btn img{
+    width: 28px;
+}
+.hero_btns .btn.black-btn{
+    background-color: #c7c1c1;
+    color: #fff;
+}
+.hero_btns .btn:hover{
+    background-color: #ffffffbf;
+}
+.hero_btns .btn.black-btn:hover{
+    background-color: #6d6d6e66;
+}
