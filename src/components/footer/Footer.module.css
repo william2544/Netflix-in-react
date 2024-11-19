@@ -1,0 +1,21 @@
+.footer{
+    padding: 34px 6%;
+    margin: 0 auto;
+    width: 100%;
+}
+.footer-icons{
+    display: flex;
+    gap: 20px;
+    max-width: 40px 0;
+}
+.footer-icons img{
+    width: 30px;
+    cursor: pointer;
+}
+.footer ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 15px;
+    margin-bottom: 30px;
+}
