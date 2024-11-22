@@ -4,22 +4,23 @@ import bell_icon from '../../assets/bell_icon.svg'
 import search_icon from '../../assets/search_icon.png'
 import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
-import './Navbar.css'
+import styles from './Navbar.module.css'
+import { logOut } from "../../firebase"
 export default function Navbar() {
     const navRef=useRef()
 
     useEffect(()=>{
         window.addEventListener('scroll',()=>{
             if (window.scrollY >= 80) {
-                navRef.current.classList.add('nav-dark')
+                navRef.current.classList.add(styles['nav-dark'])
             }else{
-                navRef.current.classList.remove('nav-dark')
+                navRef.current.classList.remove(styles['nav-dark'])
             }
         })
     },[])
     return(
-        <div className="navbar" ref={navRef}>
-            <div className="navbar-left">
+        <div className={styles["navbar"]} ref={navRef}>
+            <div className={styles["navbar-left"]}>
                 <img src={logo} alt="" />
                 <ul>
                     <li>Home</li>
@@ -30,15 +31,15 @@ export default function Navbar() {
                     <li>Browse by language</li>
                 </ul>
             </div>
-            <div className="navbar-right">
-                <img src={search_icon} alt="search icon" className="icons"/>
+            <div className={styles["navbar-right"]}>
+                <img src={search_icon} alt="search icon" className={styles["icons"]}/>
                 <p>children</p>
-                <img src={bell_icon} alt="" className="icons"/>
-                <div className="navbar-profile">
-                    <img src={profile_img} alt="" className="icons profile"/>
-                    <img src={caret_icon} alt="" className="icons"/>
-                    <div className="dropdown">
-                        <p>Sign out of netflix</p>
+                <img src={bell_icon} alt="" className={styles["icons"]}/>
+                <div className={styles["navbar-profile"]}>
+                    <img src={profile_img} alt="" className={`${styles.icons} ${styles.profile}`}/>
+                    <img src={caret_icon} alt="" className={styles["icons"]}/>
+                    <div className={styles["dropdown"]}>
+                        <p onClick={()=>logOut()}>Sign out of netflix</p>
                     </div>
                 </div>
             </div>
